@@ -4,19 +4,19 @@ function register() {
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     if (!username || !password || !confirmPassword) {
-        alert("All fields are required.");
+        window.alert("All fields are required.");
         return;
     }
 
     if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+        window.alert("Passwords do not match!");
         return;
     }
 
     localStorage.setItem("registeredUser", username);
     localStorage.setItem("registeredPassword", password);
 
-    alert("Registration successful!");
+    window.alert("Registration successful!");
     window.location.href = "login.html";
 }
 
@@ -28,9 +28,22 @@ function login() {
     const registeredPassword = localStorage.getItem("registeredPassword");
 
     if (username === registeredUser && password === registeredPassword) {
-        alert("Login successful!");
+        window.alert("Login successful!");
         window.location.href = "main.html";
     } else {
-        alert("Invalid username or password!");
+        window.alert("Invalid username or password!");
     }
+}
+
+function feedBack() {
+    const feedback = document.getElementById("feedback").value.trim();
+
+    if (!feedback) {
+        window.alert("Feedback cannot be empty.");
+        return;
+    }
+
+    console.log("Feedback submitted!");
+    window.alert("Thank you for your feedback! We will reach out to you soon.");
+    document.getElementById("feedback").value = ""; // Clear the textarea
 }

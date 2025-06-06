@@ -1,2 +1,31 @@
-//for users to submit feedback
+<!-- for users to submit feedback -->
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>MyASEANStocks | Feedback</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <h1>Feedback Form</h1>
+        <form id="feedbackForm">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Feedback:</td>
+                    <td><textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit" onclick="feedBack()">Submit Feedback</button></td>
+                </tr>
+            </table>
+        </form>
+
+        <script src="js/script.js"></script>
+</html>

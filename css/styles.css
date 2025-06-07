@@ -47,7 +47,7 @@ h1 {
 }
 
 .topbar .nav a:hover {
-    background: #34495e;
+    background: rgb(180, 55, 95);
 }
 
 .content {

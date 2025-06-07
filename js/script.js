@@ -29,7 +29,7 @@ function login() {
 
     if (username === registeredUser && password === registeredPassword) {
         window.alert("Login successful!");
-        window.location.href = "main.html";
+        window.location.href = "main_login.html"; /* after login, automatically direct to main.html */
     } else {
         window.alert("Invalid username or password!");
     }

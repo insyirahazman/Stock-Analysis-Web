@@ -1,3 +1,26 @@
+function updateTopbarNav() {
+    const nav = document.getElementById("topbar-nav");
+    if (!nav) return; // Prevent errors if nav is missing
+
+    const isLoggedIn = !!localStorage.getItem("registeredUser");
+    if (isLoggedIn) {
+        nav.innerHTML = `
+            <a href="main.html">Home</a>
+            <a href="stock_details.html">Stocks</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="logout.html">Logout</a>
+        `;
+    } else {
+        nav.innerHTML = `
+            <a href="main.html">Home</a>
+            <a href="login.html">Login</a>
+        `;
+    }
+}
+
+// Run after DOM is loaded
+document.addEventListener("DOMContentLoaded", updateTopbarNav);
+
 function register() {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
@@ -29,7 +52,7 @@ function login() {
 
     if (username === registeredUser && password === registeredPassword) {
         window.alert("Login successful!");
-        window.location.href = "main_login.html"; /* after login, automatically direct to main.html */
+        window.location.href = "main.html";
     } else {
         window.alert("Invalid username or password!");
     }
@@ -45,5 +68,5 @@ function feedBack() {
 
     console.log("Feedback submitted!");
     window.alert("Thank you for your feedback! We will reach out to you soon.");
-    document.getElementById("feedback").value = ""; // Clear the textarea
+    document.getElementById("feedback").value = "";
 }

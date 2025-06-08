@@ -5,6 +5,7 @@
         <title>MyASEANStocks | Stocks</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/stocks.css">
+        <link rel="stylesheet" href="css/topbar.css">
     </head>
     <body>
         <div class="topbar">
@@ -24,6 +25,9 @@
 
         <div class="stock-chart-btn2" id="stock-chart-btn2">
             <button id="view-chart">View Chart</button>
+            <button id="view-line-chart">View Line Chart</button>
+            <button id="view-heikin-chart">View Heikin Ashi Chart</button>
+            <canvas id="stockChart" width="600" height="300" style="display:none; margin-top:20px;"></canvas>
         </div>
 
         <div id="stock-details" style="display:none">
@@ -38,6 +42,7 @@
         
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     </body>
 </html>

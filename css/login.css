@@ -1,0 +1,23 @@
+.login-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.login-btn button {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn button:hover {
+    background-color: blue;
+}
+
+.login-btn a {
+    text-decoration: none;
+    color: white;
+}

@@ -6,7 +6,7 @@ function updateTopbarNav() {
     if (isLoggedIn) {
         nav.innerHTML = `
             <a href="main.html">Home</a>
-            <a href="stock_details.html">Stocks</a>
+            <a href="stocks.html">Stocks</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="logout.html">Logout</a>
         `;

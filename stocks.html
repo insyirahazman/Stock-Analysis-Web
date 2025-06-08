@@ -1,0 +1,43 @@
+<!-- display selected stock -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyASEANStocks | Stocks</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/stocks.css">
+    </head>
+    <body>
+        <div class="topbar">
+            <span class="title">MyASEANStocks |</span>
+            <div class="nav" id="topbar-nav"></div>
+        </div>
+
+        <h1>Stock Details</h1>
+        <div class="stock-box" id="stock-box" style="cursor:pointer">
+            <h4 id="stock-title">Loading...</h4>
+            <p id="stock-symbol">Loading...</p>
+            <p id="stock-price">Loading...</p>
+            <p id="stock-change">Loading...</p>
+            <div class="stock-box-btn1" id="stock-box-btn1">
+            <button type="submit">Add to Watchlist</button>
+        </div>
+
+        <div class="stock-chart-btn2" id="stock-chart-btn2">
+            <button id="view-chart">View Chart</button>
+        </div>
+
+        <div id="stock-details" style="display:none">
+            <p id="stock-volume">Loading...</p>
+            <p id="stock-market-cap">Loading...</p>
+            <p id="stock-pe-ratio">Loading...</p>
+            <p id="stock-dividend-yield">Loading...</p>
+            <p id="stock-52-week-high">Loading...</p>
+            <p id="stock-52-week-low">Loading...</p>
+            <p id="stock-description">Loading...</p>
+        </div>
+        
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    
+    </body>
+</html>

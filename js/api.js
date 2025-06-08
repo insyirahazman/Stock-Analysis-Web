@@ -62,4 +62,14 @@ function getStockData(symbol) {
 
 window.onload = function() {
     getStockData(symbol);
-};
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const box = document.getElementById("stock-box");
+    const details = document.getElementById("stock-details");
+    if (box && details) {
+        box.addEventListener("click", function() {
+            details.style.display = details.style.display === "none" ? "block" : "none";
+        });
+    }
+});

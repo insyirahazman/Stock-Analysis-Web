@@ -16,19 +16,20 @@
             </div>
         </div>
         <h1>Stock Details</h1>
-        <p>Here you can view the details of the selected stock.</p>
-        <h4 id="stock-title">Loading...</h4>
-        <div id="stock-details">
+        <div class="stock-box" id="stock-box" style="cursor:pointer;">
+            <h4 id="stock-title">Loading...</h4>
             <p id="stock-symbol">Loading...</p>
             <p id="stock-price">Loading...</p>
             <p id="stock-change">Loading...</p>
-            <p id="stock-volume">Loading...</p>
-            <p id="stock-market-cap">Loading...</p>
-            <p id="stock-pe-ratio">Loading...</p>
-            <p id="stock-dividend-yield">Loading...</p>
-            <p id="stock-52-week-high">Loading...</p>
-            <p id="stock-52-week-low">Loading...</p>
-            <p id="stock-description">Loading...</p>
+            <div id="stock-details" style="display:none; margin-top:10px;">
+                <p id="stock-volume">Loading...</p>
+                <p id="stock-market-cap">Loading...</p>
+                <p id="stock-pe-ratio">Loading...</p>
+                <p id="stock-dividend-yield">Loading...</p>
+                <p id="stock-52-week-high">Loading...</p>
+                <p id="stock-52-week-low">Loading...</p>
+                <p id="stock-description">Loading...</p>
+            </div>
         </div>
     <script src="js/api.js"></script>
     

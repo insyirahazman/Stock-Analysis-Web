@@ -7,7 +7,7 @@ function updateTopbarNav() {
         nav.innerHTML = `
             <a href="main.html">Home</a>
             <a href="stock_details.html">Stocks</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="portfolio.html">Portfolio</a>
             <a href="logout.html">Logout</a>
         `;
     } else {
@@ -68,5 +68,6 @@ function feedBack() {
 
     console.log("Feedback submitted!");
     window.alert("Thank you for your feedback! We will reach out to you soon.");
-    document.getElementById("feedback").value = "";
+    document.getElementById("feedback").value = ""; // Clear before redirect
+    window.location.href = "main.html";
 }

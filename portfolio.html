@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyASEANStocks | Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <span class="title">MyASEANStocks |</span>
+        <div class="nav" id="topbar-nav"></div>
+    </div>
+    <div class="content">
+        <h1>Portfolio</h1>
+
+        <!-- Watchlist Section -->
+        <section>
+            <h2>Watchlist</h2>
+            <form id="watchlistForm">
+                <input type="text" id="watchSymbol" placeholder="Stock Symbol (e.g. AAPL, MAYBANK.KL)" required>
+                <button type="submit">Add to Watchlist</button>
+            </form>
+            <ul id="watchlist"></ul>
+        </section>
+
+        <!-- Alerts Section -->
+        <section>
+            <h2>Price Alerts</h2>
+            <form id="alertForm">
+                <input type="text" id="alertSymbol" placeholder="Stock Symbol" required>
+                <input type="number" id="alertPrice" placeholder="Alert Price" required>
+                <button type="submit">Set Alert</button>
+            </form>
+            <ul id="alertsList"></ul>
+        </section>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>

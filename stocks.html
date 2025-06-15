@@ -25,8 +25,6 @@
 
         <div class="stock-chart-btn2" id="stock-chart-btn2">
             <button id="view-chart">View Chart</button>
-            <button id="view-line-chart">View Line Chart</button>
-            <button id="view-heikin-chart">View Heikin Ashi Chart</button>
             <canvas id="stockChart" width="600" height="300" style="display:none; margin-top:20px;"></canvas>
         </div>
 
@@ -39,10 +37,41 @@
             <p id="stock-52-week-low">Loading...</p>
             <p id="stock-description">Loading...</p>
         </div>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" style="height:100%;width:100%">
+          <div id="tradingview_chart"></div>
+          <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+              <span class="blue-text">Track all markets on TradingView</span>
+            </a>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+          new TradingView.widget({
+            "autosize": true,
+            "symbol": "NASDAQ:AAPL",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "allow_symbol_change": true,
+            "studies": [
+              "STD;Accumulation_Distribution",
+              "STD;Least%1Squares%1Moving%1Average",
+              "STD;Linear_Regression",
+              "STD;SMA",
+              "STD;TEMA"
+            ],
+            "container_id": "tradingview_chart"
+          });
+        </script>
+        <!-- TradingView Widget END -->
         
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     </body>
 </html>

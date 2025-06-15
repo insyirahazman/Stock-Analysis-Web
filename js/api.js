@@ -1,3 +1,4 @@
+// Twelve Data apiKey
 const apiKey = '7f91e7f920cc435b80b5605738ccc713';
 const symbol = 'AAPL';
 

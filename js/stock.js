@@ -38,10 +38,19 @@ function fetchStockDetails(symbol, unique) {
                 }
 
                 document.getElementById(`stock-volume-${unique}`).innerText = value.volume || "N/A";
+            } else {
+                document.getElementById(`stock-price-${unique}`).innerText = "N/A";
+                document.getElementById(`stock-change-${unique}`).innerText = "N/A";
+                document.getElementById(`stock-volume-${unique}`).innerText = "N/A";
             }
+        })
+        .catch(() => {
+            document.getElementById(`stock-price-${unique}`).innerText = "N/A";
+            document.getElementById(`stock-change-${unique}`).innerText = "N/A";
+            document.getElementById(`stock-volume-${unique}`).innerText = "N/A";
         });
 
-    // 3. PROFILE: Description
+    // PROFILE: Description
     fetch(`https://api.twelvedata.com/profile?symbol=${symbol}&apikey=${apiKey}`)
         .then(response => response.json())
         .then(data => {

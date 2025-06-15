@@ -1,6 +1,13 @@
 // Twelve Data apiKey
 const apiKey = '7f91e7f920cc435b80b5605738ccc713';
-const symbol = 'AAPL';
+const stocks = [
+    { symbol: "AAPL", name: "Apple Inc." },
+    { symbol: "GOOGL", name: "Alphabet Inc." },
+    { symbol: "AMZN", name: "Amazon.com Inc." },
+    { symbol: "TSLA", name: "Tesla Inc." },
+    { symbol: "MSFT", name: "Microsoft Corp." },
+    { symbol: "NVDA", name: "NVIDIA Corp." }
+];
 
 function getStockData(symbol) {
     [

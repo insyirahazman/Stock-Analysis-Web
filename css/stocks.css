@@ -1,3 +1,9 @@
+.stock-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
 .stock-box {
     display: flex;
     flex-wrap: wrap;
@@ -5,10 +11,10 @@
     margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 18px;
+    padding: 16px;
+    width: 240px;
     background: #fff;
-    max-width: 400px;
-    margin: 30px auto;
+    margin: 30px auto 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: box-shadow 0.2s;
 }
@@ -41,3 +47,6 @@ a, a:focus, a:active {
     box-shadow: none;
     color: black
 }
+
+.stock-change.positive { color: #27ae60; }
+.stock-change.negative { color: #c0392b; }

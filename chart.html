@@ -16,37 +16,48 @@
         <h1>Stock Chart</h1>
         <p>View the stock chart for your selected stock.</p>
 
-        <div class="tradingview-widget-container__widget">
-            <div id="tradingview_chart"></div>
-        </div>
+        <div id="charts-list"></div>
 
         <script src="js/main.js"></script>
     </body>
     
-    <div class="tradingview-widget-container" id="tradingview-container" style="display:none; height:100%; width:100%">
-      <div id="tradingview_chart"></div>
-      <div class="tradingview-widget-copyright"></div>
-    </div>
-
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <script type="text/javascript">
-      new TradingView.widget({
-        "autosize": true,
-        "symbol": "NASDAQ:AAPL",
-        "interval": "D",
-        "timezone": "Etc/UTC",
-        "theme": "dark",
-        "style": "1",
-        "locale": "en",
-        "allow_symbol_change": true,
-        "studies": [
-          "STD;Accumulation_Distribution",
-          "STD;Least%1Squares%1Moving%1Average",
-          "STD;Linear_Regression",
-          "STD;SMA",
-          "STD;TEMA"
-        ],
-        "container_id": "tradingview_chart"
+      // List of stocks to show charts for
+      const stocks = [
+        { symbol: "NASDAQ:AAPL", name: "Apple Inc." },
+        { symbol: "NASDAQ:GOOGL", name: "Alphabet Inc." },
+        { symbol: "NASDAQ:AMZN", name: "Amazon.com Inc." },
+        { symbol: "NASDAQ:TSLA", name: "Tesla Inc." }
+        // Add more as needed
+      ];
+
+      const chartsList = document.getElementById("charts-list");
+
+      stocks.forEach((stock, idx) => {
+        // Create a container for each chart
+        const containerId = `tradingview_chart_${idx}`;
+        const chartDiv = document.createElement("div");
+        chartDiv.className = "tradingview-widget-container";
+        chartDiv.style.marginBottom = "40px";
+        chartDiv.innerHTML = `
+          <h2>${stock.name} (${stock.symbol})</h2>
+          <div id="${containerId}"></div>
+        `;
+        chartsList.appendChild(chartDiv);
+
+        // Create the widget for each stock
+        new TradingView.widget({
+          "autosize": true,
+          "symbol": stock.symbol,
+          "interval": "D",
+          "timezone": "Etc/UTC",
+          "theme": "dark",
+          "style": "1",
+          "locale": "en",
+          "allow_symbol_change": true,
+          "container_id": containerId
+        });
       });
     </script>
     <!-- TradingView Widget END -->

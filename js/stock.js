@@ -3,7 +3,6 @@ const apiKey = '2a5eb39fe7424bdcad1a78a91ffe8300';
 const stocks = [
     { symbol: "AAPL", name: "Apple Inc." },
     { symbol: "TSLA", name: "Tesla Inc." },
-    { symbol: "MSFT", name: "Microsoft Corp." },
     { symbol: "NVDA", name: "NVIDIA Corp." }
 ];
 

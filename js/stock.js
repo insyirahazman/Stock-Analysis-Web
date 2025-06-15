@@ -9,26 +9,11 @@ const stocks = [
 
 function fetchStockDetails(symbol, unique) {
     [
-        "stock-price", "stock-change", "stock-volume",
-        "stock-market-cap", "stock-pe-ratio", "stock-dividend-yield", "stock-description"
+        "stock-price", "stock-change", "stock-volume", "stock-description"
     ].forEach(id => {
         const el = document.getElementById(`${id}-${unique}`);
         if (el) el.innerText = "Loading...";
     });
-
-    // 1. QUOTE: Name, Symbol, Market Cap, PE, Dividend, 52W High/Low
-    fetch(`https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data && !data.status) {
-                document.getElementById(`stock-title-${unique}`).innerText = `${data.name || symbol} (${data.symbol || symbol})`;
-                document.getElementById(`stock-market-cap-${unique}`).innerText = data.market_cap || "N/A";
-                document.getElementById(`stock-pe-ratio-${unique}`).innerText = data.pe || "N/A";
-                document.getElementById(`stock-dividend-yield-${unique}`).innerText = data.dividend_yield || "N/A";
-            } else {
-                document.getElementById(`stock-title-${unique}`).innerText = "Stock not found.";
-            }
-        });
 
     // TIME SERIES
     fetch(`https://api.twelvedata.com/time_series?symbol=${symbol}&interval=1day&apikey=${apiKey}`)
@@ -77,9 +62,6 @@ function createStockBox(stock, unique) {
             <div class="stock-field"><span class="label">Volume:</span> <span id="stock-volume-${unique}" class="value">Loading...</span></div>
 
             <div id="stock-details-${unique}" class="stock-details" style="display:none; margin-top:10px;">
-                <div class="stock-field"><span class="label">Market Cap:</span> <span id="stock-market-cap-${unique}" class="value">Loading...</span></div>
-                <div class="stock-field"><span class="label">PE Ratio:</span> <span id="stock-pe-ratio-${unique}" class="value">Loading...</span></div>
-                <div class="stock-field"><span class="label">Dividend Yield:</span> <span id="stock-dividend-yield-${unique}" class="value">Loading...</span></div>
                 <div class="stock-field"><span class="label">Description:</span> <span id="stock-description-${unique}" class="value">Loading...</span></div>
             </div>
 

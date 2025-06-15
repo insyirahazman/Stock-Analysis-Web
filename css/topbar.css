@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: black;
+    background-color: rgb(30, 66, 77);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -16,7 +16,6 @@
       font-weight: bold;
       padding: 0 20px;
       line-height: 60px;
-      /* Ensures the title is vertically centered */
     }
 
 .topbar .nav {
@@ -34,5 +33,6 @@
 }
 
 .topbar .nav a:hover {
-    background: rgb(180, 55, 95);
+    background: rgb(229, 213, 149);
+    color: black;
 }

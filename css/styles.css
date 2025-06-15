@@ -1,5 +1,5 @@
 body{
-    font-family: Arial;
+    font-family: 'Segoe UI', sans-serif;
     margin-left: 30px;
     margin-top: 80px;
     padding: 0;
@@ -20,4 +20,28 @@ p{
 .content {
     margin-top: 50px;
     padding: 20px;
+}
+
+button, button:focus, button:active {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    color: black;
+    border-color: rgb(30, 66, 77);
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(30, 66, 77);
+    color: white;
+}
+
+button a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+a, a:focus, a:active{
+    color: rgb(30, 66, 77);
+    text-decoration: none;
 }

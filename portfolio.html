@@ -4,7 +4,20 @@
     <title>MYStocks | Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/topbar.css">
-    
+    <style>
+        watchlist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        watchlist li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
 </head>
 <body>
     <div class="topbar">
@@ -12,16 +25,15 @@
         <div class="nav" id="topbar-nav"></div>
     </div>
     <div class="content">
-        <h1>Portfolio</h1>
-        <!-- Watchlist Section -->
-        <section>
-            <h2>Watchlist</h2>
-            <form id="watchlistForm">
-                <input type="text" id="watchSymbol" placeholder="Stock Symbol (e.g. AAPL, MAYBANK.KL)" required>
-                <button type="submit">Add to Watchlist</button>
-            </form>
-            <ul id="watchlist"></ul>
-        </section>
+        <h1>Watchlist</h1>
+        <select id="watchlistSelect">
+            <option value="">-- Select a stock to add --</option>
+            <option value="AAPL">AAPL - Apple Inc.</option>
+            <option value="TSLA">TSLA - Tesla Inc.</option>
+            <option value="MSFT">MSFT - Microsoft Corp.</option>
+            <option value="NVDA">NVDA - NVIDIA Corp.</option>
+        </select>
+        <ul id="watchlist"></ul>
     </div>
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>

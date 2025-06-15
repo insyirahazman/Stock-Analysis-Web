@@ -1,12 +1,67 @@
-<!-- display selected stock -->
+<!-- display list of stocks -->
 <!DOCTYPE html>
 <html>
     <head>
         <title>MYStocks | Stocks</title>
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/stocks.css">
         <link rel="stylesheet" href="css/topbar.css">
+        <style>
+            .stock-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .stock-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            width: 240px;
+            background: #fff;
+            margin: 30px auto 20px;
+            background-color: rgba(229, 213, 149, 0.727);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s;
+        }
+
+        .stock-box:hover {
+            color: rgb(0, 0, 0)
+        }
+
+        .stock-box-btn1 {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .stock-box-btn2 {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button, button:focus, button:active,
+        a, a:focus, a:active {
+            text-decoration: none;
+            outline: none;
+            box-shadow: none;
+            color: black
+        }
+
+        .stock-change.positive { color: #27ae60; }
+        .stock-change.negative { color: #c0392b; }
+        </style>
     </head>
+
     <body>
         <div class="topbar">
             <span class="title">MYStocks |</span>
@@ -14,33 +69,9 @@
         </div>
 
         <h1>Stock Details</h1>
-        <div class="stock-box" id="stock-box" style="cursor:pointer">
-            <h4 id="stock-title">Loading...</h4>
-            <p id="stock-symbol">Loading...</p>
-            <p id="stock-price">Loading...</p>
-            <p id="stock-change">Loading...</p>
-            <p id="stock-volume">Loading...</p>
-            <div class="stock-box-btn1" id="stock-box-btn1">
-            <button type="submit">Add to Watchlist</button>
-        </div>
-
-        <div class="stock-chart-btn2" id="stock-chart-btn2">
-            <button type="button"><a href="chart.html">View Chart</a></button>
-        </div>
-
-        <div id="stock-details" style="display:none">
-            <p id="stock-volume">Loading...</p>
-            <p id="stock-market-cap">Loading...</p>
-            <p id="stock-pe-ratio">Loading...</p>
-            <p id="stock-dividend-yield">Loading...</p>
-            <p id="stock-52-week-high">Loading...</p>
-            <p id="stock-52-week-low">Loading...</p>
-            <p id="stock-description">Loading...</p>
-        </div>
-
         <div class="stock-list" id="stock-list"></div>
 
         <script src="js/main.js"></script>
-        <script src="js/api.js"></script>
+        <script src="js/stock.js"></script>
     </body>
 </html>

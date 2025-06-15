@@ -2,29 +2,62 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MyASEANStocks</title>
+        <title>MYStocks</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/topbar.css">
+        <style>
+            .feature-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .feature {
+                flex: 1 1 200px;
+                min-width: 200px;
+                max-width: 400px;
+                padding: 16px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background: #fff;
+            }
+        </style>
     </head>
     <body>
     <div class="topbar">
-        <span class="title">MyASEANStocks |</span>
+        <span class="title">MYStocks |</span>
         <div class="nav" id="topbar-nav"></div>
     </div>
 
-    <br><h1>MyASEANStocks</h1>
-    <p>MyASEANStocks is a Malaysian-based platform that engage with the Malaysia and Southeast Asian markets.</p>
+    <br><h1>MYStocks</h1>
+    <p>MYStocks is a Malaysian-based stock analysis platform that focuses on NASDAQ-listed stocks. 
+        It integrates the Twelve Data API and TradingView widgets to deliver real-time market data, visualizations, and 
+        analytic insights for traders and investors. 
+        The platform aims to provide a user-friendly, cost-free experience for beginners, students, and retail investors.</p>
+    <br><br>
 
-    <h4>Features</h4>
-    <ul>
-        <li>User Authentication: Secure login and registration for users.</li>
-        <li>Portfolio Management: Track your investments and view performance metrics.</li>
-        <li>Market Analysis: Access real-time stock data and market trends.</li>
-    </ul>
+    <div class="feature-container">
+        <div class="feature">
+            <img src="image/user_authentication.jpg" alt="Feature 1" width=100px height=100px>
+            <p><strong>User Authentication</strong></p>
+            <p>Secure login and registration for users.</p>
+        </div>
+        <div class="feature">
+            <img src="image/portfolio_management.png" alt="Feature 2" width=150px height=100px>
+            <p><strong>Portfolio Management</strong></p>
+            <p>Track your investments and view performance metrics.</p>
+        </div>
+        <div class="feature">
+            <img src="image/market_analysis.jpg" alt="Feature 3" width=160px height=100px>
+            <p><strong>Market Analysis</strong></p>
+            <p>Access real-time stock data and market trends.</p>
+        </div>
+    </div>
 
+    <br><p>Now or Never! Click the Register button to dive in the world of investment.</p>
     <button type="button"><a href="register.html">REGISTER HERE</a></button>
 
-    <h5>Contact Us</h5>
+    <h4>Contact Us</h4>
     <p>If you have any questions or feedback, please reach out to us at <a href="feedback.html">Feedback Form</a>.</p>
 
     <script src="js/main.js"></script>

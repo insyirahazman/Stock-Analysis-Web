@@ -6,7 +6,7 @@ function updateTopbarNav() {
     // after login, the user will be redirected to main.html
     if (isLoggedIn) {
         nav.innerHTML = `
-            <a href="main.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="stocks.html">Stocks</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="#" id="logout-link">Logout</a>
@@ -26,7 +26,7 @@ function updateTopbarNav() {
     } else {
         // if not logged in, show only Home and Login links
         nav.innerHTML = `
-            <a href="main.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="login.html">Login</a>
         `;
     }
@@ -79,7 +79,7 @@ if (loginForm) {
         if (user) {
             localStorage.setItem("loggedInUser", username);
             window.alert("Login successful!");
-            window.location.href = "main.html";
+            window.location.href = "index.html";
         } else {
             window.alert("Invalid username or password.");
         }
@@ -100,6 +100,6 @@ if (feedbackForm) {
 
         window.alert("Thank you for your feedback! We will reach out to you soon.");
         document.getElementById("feedback").value = "";
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     };
 }

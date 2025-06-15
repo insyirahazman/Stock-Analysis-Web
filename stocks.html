@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/topbar.css">
         <style>
-            .stock-list {
+        .stock-list {
             display: flex;
             flex-wrap: wrap;
             gap: 24px;
@@ -28,29 +28,25 @@
             transition: box-shadow 0.2s;
         }
 
-        .stock-box:hover {
-            color: rgb(0, 0, 0)
+        .stock-field {
+            display: block;
+            margin: 2px 0 8px 0;
+            font-size: 15px;
         }
 
-        .stock-box-btn1 {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 40px;
-            color: white;
-            border-radius: 5px;
+        .stock-field .label {
+            font-weight: 600;
+            color: #333;
+            margin-right: 4px;
+            display: inline;
         }
 
-        .stock-box-btn2 {
-            width: 100%;
-            height: 300px;
-            margin-top: 20px;
-            color: white;
-            border-radius: 5px;
+        .stock-field .value {
+            font-weight: 400;
+            display: inline;
         }
 
-        button, button:focus, button:active,
-        a, a:focus, a:active {
+        button, button:focus, button:active {
             text-decoration: none;
             outline: none;
             box-shadow: none;
@@ -59,6 +55,15 @@
 
         .stock-change.positive { color: #27ae60; }
         .stock-change.negative { color: #c0392b; }
+
+        .stock-field.description .label {
+            display: block;
+            margin-bottom: 2px;
+        }
+        .stock-field.description .value {
+            display: block;
+            margin-left: 0;
+        }
         </style>
     </head>
 
@@ -68,8 +73,10 @@
             <div class="nav" id="topbar-nav"></div>
         </div>
 
-        <h1>Stock Details</h1>
-        <div class="stock-list" id="stock-list"></div>
+        <div class="content">
+            <h1>Stock Details</h1>
+            <div class="stock-list" id="stock-list"></div>
+        </div>
 
         <script src="js/main.js"></script>
         <script src="js/stock.js"></script>

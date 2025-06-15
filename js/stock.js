@@ -10,8 +10,7 @@ const stocks = [
 function fetchStockDetails(symbol, unique) {
     [
         "stock-price", "stock-change", "stock-volume",
-        "stock-market-cap", "stock-pe-ratio", "stock-dividend-yield",
-        "stock-52-week-high", "stock-52-week-low", "stock-description"
+        "stock-market-cap", "stock-pe-ratio", "stock-dividend-yield", "stock-description"
     ].forEach(id => {
         const el = document.getElementById(`${id}-${unique}`);
         if (el) el.innerText = "Loading...";
@@ -26,8 +25,6 @@ function fetchStockDetails(symbol, unique) {
                 document.getElementById(`stock-market-cap-${unique}`).innerText = data.market_cap || "N/A";
                 document.getElementById(`stock-pe-ratio-${unique}`).innerText = data.pe || "N/A";
                 document.getElementById(`stock-dividend-yield-${unique}`).innerText = data.dividend_yield || "N/A";
-                document.getElementById(`stock-52-week-high-${unique}`).innerText = data.fifty_two_week?.high || "N/A";
-                document.getElementById(`stock-52-week-low-${unique}`).innerText = data.fifty_two_week?.low || "N/A";
             } else {
                 document.getElementById(`stock-title-${unique}`).innerText = "Stock not found.";
             }
@@ -83,8 +80,6 @@ function createStockBox(stock, unique) {
                 <div class="stock-field"><span class="label">Market Cap:</span> <span id="stock-market-cap-${unique}" class="value">Loading...</span></div>
                 <div class="stock-field"><span class="label">PE Ratio:</span> <span id="stock-pe-ratio-${unique}" class="value">Loading...</span></div>
                 <div class="stock-field"><span class="label">Dividend Yield:</span> <span id="stock-dividend-yield-${unique}" class="value">Loading...</span></div>
-                <div class="stock-field"><span class="label">52 Week High:</span> <span id="stock-52-week-high-${unique}" class="value">Loading...</span></div>
-                <div class="stock-field"><span class="label">52 Week Low:</span> <span id="stock-52-week-low-${unique}" class="value">Loading...</span></div>
                 <div class="stock-field"><span class="label">Description:</span> <span id="stock-description-${unique}" class="value">Loading...</span></div>
             </div>
 

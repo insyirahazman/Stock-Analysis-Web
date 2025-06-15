@@ -56,7 +56,7 @@ function getStockData(symbol) {
 
     setTimeout(() => {
         if (!found) {
-            document.getElementById("stock-title").innerText = "Stock not found or not supported by Twelve Data.";
+            document.getElementById("stock-title").innerText = "Stock not found.";
         }
     }, 1500);
 }

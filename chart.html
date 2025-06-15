@@ -1,22 +1,56 @@
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_chart"></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-    new TradingView.widget({
-      "width": 700,
-      "height": 400,
-      "symbol": "AAPL", // Change to your desired symbol, e.g. "MAYBANK:5183"
-      "interval": "D",
-      "timezone": "Etc/UTC",
-      "theme": "light",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#f1f3f6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "container_id": "tradingview_chart"
-    });
-  </script>
-</div>
-<!-- TradingView Widget END -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MYStocks | Stocks</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/topbar.css">
+    </head>
+
+    <body>
+        <div class="topbar">
+            <span class="title">MYStocks |</span>
+            <div class="nav" id="topbar-nav"></div>
+        </div>
+
+        <h1>Stock Chart</h1>
+        <p>View the stock chart for your selected stock.</p>
+
+        <div class="tradingview-widget-container__widget">
+            <div id="tradingview_chart"></div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+    
+    <div class="tradingview-widget-container" id="tradingview-container" style="display:none; height:100%; width:100%">
+      <div id="tradingview_chart"></div>
+      <div class="tradingview-widget-copyright"></div>
+    </div>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "autosize": true,
+        "symbol": "NASDAQ:AAPL",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "allow_symbol_change": true,
+        "studies": [
+          "STD;Accumulation_Distribution",
+          "STD;Least%1Squares%1Moving%1Average",
+          "STD;Linear_Regression",
+          "STD;SMA",
+          "STD;TEMA"
+        ],
+        "container_id": "tradingview_chart"
+      });
+    </script>
+    <!-- TradingView Widget END -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

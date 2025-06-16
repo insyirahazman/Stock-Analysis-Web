@@ -1,5 +1,5 @@
 // Twelve Data apiKey
-const apiKey = '2a5eb39fe7424bdcad1a78a91ffe8300';
+const apiKey = 'c8c51f55bf9b469a8f95fe4ab7bc43a2';
 const stocks = [
     { symbol: "AAPL", name: "Apple Inc." },
     { symbol: "TSLA", name: "Tesla Inc." },

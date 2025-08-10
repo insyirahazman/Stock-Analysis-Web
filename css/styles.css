@@ -5,6 +5,7 @@ body{
     margin-top: 80px;
     padding: 0;
     background-color: #f4f4f4;
+    min-height: 100vh;
 }
 
 h1 {

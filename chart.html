@@ -24,11 +24,45 @@
         justify-content: space-between;
         align-items: flex-start;
         width: 100%;
+        gap: 20px;
       }
-      chart-predictor-container {
+      #chart-predictor-container {
         width: 300px;
         max-width: 100%;
         padding-left: 20px;
+        flex-shrink: 0;
+      }
+      
+      /* Mobile responsive styles */
+      @media screen and (max-width: 768px) {
+        .chart-flex {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        #tradingview_chart {
+          width: 100%;
+          min-height: 400px;
+        }
+        
+        #chart-predictor-container {
+          width: 100%;
+          max-width: 100%;
+          padding-left: 0;
+          margin-top: 20px;
+        }
+        
+        #stock-predictor {
+          padding: 15px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background: #f9f9f9;
+        }
+        
+        #historical-data {
+          width: 100%;
+          box-sizing: border-box;
+        }
       }
     </style>
 </head>
@@ -49,15 +83,20 @@
 
     <script src="js/main.js"></script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/stock-predictor.js"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const symbol = params.get("symbol") || "AAPL";
+      
+      // Make chart responsive based on screen size
+      const isMobile = window.innerWidth <= 768;
+      const chartWidth = isMobile ? window.innerWidth - 40 : 1000;
+      const chartHeight = isMobile ? 400 : 500;
+      
       new TradingView.widget({
-        "width": 1000,
-        "height": 500,
+        "width": chartWidth,
+        "height": chartHeight,
         "symbol": "NASDAQ:" + symbol,
         "interval": "D",
         "timezone": "Etc/UTC",
@@ -65,7 +104,7 @@
         "style": "1",
         "locale": "en",
         "withdateranges": true,
-        "hide_side_toolbar": false,
+        "hide_side_toolbar": isMobile,
         "allow_symbol_change": true,
         "studies": [
           "STD;24h%Volume",

@@ -45,13 +45,13 @@ async function predictStockPriceLSTM() {
 
     // Build LSTM model
     const model = tf.sequential();
-    model.add(tf.layers.lstm({units: 32, inputShape: [windowSize, 1]}));
+    model.add(tf.layers.lstm({units: 8, inputShape: [windowSize, 1]}));
     model.add(tf.layers.dense({units: 1}));
     model.compile({optimizer: 'adam', loss: 'meanSquaredError'});
 
     // Train model
     resultElem.innerHTML = 'Training LSTM model, please wait...';
-    await model.fit(xsTensor, ysTensor, {epochs: 50, batchSize: 8, verbose: 0});
+    await model.fit(xsTensor, ysTensor, {epochs: 15, batchSize: 4, verbose: 0});
 
     // Predict next price
     const lastWindow = normPrices.slice(-windowSize);

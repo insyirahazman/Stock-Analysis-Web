@@ -7,17 +7,54 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/topbar.css">
     <style>
-        watchlist {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .watchlist-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
         }
-
-        watchlist li {
-            margin-bottom: 20px;
+        .watchlist-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 18px 20px;
             display: flex;
-            align-items: center;
-            gap: 12px;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: box-shadow 0.2s;
+        }
+        .watchlist-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+        }
+        .stock-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            transition: color 0.2s, text-decoration 0.2s;
+            cursor: pointer;
+        }
+        .stock-title:hover {
+            color: #0074d9;
+            text-decoration: underline;
+        }
+        .stock-field {
+            margin-bottom: 6px;
+        }
+        .stock-change.positive {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .stock-change.negative {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .stock-change {
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .watchlist-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -28,13 +65,14 @@
     </div>
     <div class="content">
         <h1>Watchlist</h1>
-        <select id="watchlistSelect">
-            <option value="">-- Select a stock to add --</option>
-            <option value="AAPL">AAPL - Apple Inc.</option>
-            <option value="TSLA">TSLA - Tesla Inc.</option>
-            <option value="NVDA">NVDA - NVIDIA Corp.</option>
+        <div class="watchlist-controls"></div>
+            <select id="watchlistSelect">
+                <option value="">-- Select a stock to add --</option>
+                <option value="AAPL">AAPL - Apple Inc.</option>
+                <option value="TSLA">TSLA - Tesla Inc.</option>
+                <option value="NVDA">NVDA - NVIDIA Corp.</option>
         </select>
-        <ul id="watchlist"></ul>
+        <div class="watchlist-cards" id="watchlist"></div>
     </div>
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>

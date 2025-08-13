@@ -1,3 +1,11 @@
+/* Remove button hover effect */
+.remove-btn:hover {
+    background: #f2f2f2;
+    cursor: pointer;
+}
+.remove-btn:hover img {
+    filter: brightness(0.7);
+}
 body{
     font-family: 'Segoe UI', sans-serif;
     margin-left: 30px;

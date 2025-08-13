@@ -10,13 +10,13 @@ function renderWatchlist() {
     const list = getWatchlist();
     ul.innerHTML = list.length
         ? list.map(item =>
-            `<li>
+            `<li style="display: flex; align-items: center; gap: 8px; min-height: 32px;">
                 <a href="chart.html?symbol=${encodeURIComponent(item.symbol)}&name=${encodeURIComponent(item.name)}" 
                    style="text-decoration:none;color:inherit;">
                    ${item.symbol} - ${item.name}
                 </a>
-                <button type="button" onclick="removeFromWatchlist('${item.symbol}')">
-                    <img src="image/remove.jpg" alt="Remove" style="width:16px;height:16px;vertical-align:middle;">
+                <button type="button" class="remove-btn" onclick="removeFromWatchlist('${item.symbol}')" style="width:auto; height:auto; padding:0; margin:0; display:flex; align-items:center; justify-content:center; background:none; border:none; min-height:0; min-width:0;">
+                    <img src="image/remove.jpg" alt="Remove" style="width:20px;height:20px;display:block; margin:0; padding:0;">
                 </button>
             </li>`
         ).join("")

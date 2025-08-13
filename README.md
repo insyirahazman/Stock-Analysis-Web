@@ -6,7 +6,7 @@ A comprehensive web-based stock analysis platform designed for traders, investor
 
 ## 🌟 Overview
 
-MYStocks is a Malaysia-focused stock analysis platform that provides real-time market data, interactive visualizations, and predictive insights for NASDAQ stocks. Built with modern web technologies, it offers a user-friendly interface suitable for both beginners and professional traders.
+MYStocks is a web-based stock analysis platform that provides real-time market data, interactive visualizations, and predictive insights for popular US stocks (e.g., AAPL, TSLA, NVDA). Built with modern web technologies, it offers a user-friendly interface suitable for both beginners and professional traders.
 
 **🔗 Live Website:** [https://insyirahazman.github.io/Stock-Analysis-Web/](https://insyirahazman.github.io/Stock-Analysis-Web/)
 
@@ -23,7 +23,7 @@ MYStocks is a Malaysia-focused stock analysis platform that provides real-time m
   - Current price and daily changes
   - Trading volume
   - Company descriptions
-- Support for popular stocks (AAPL, TSLA, NVDA, etc.)
+- Support for popular stocks (AAPL, TSLA, NVDA)
 
 ### 📈 **Enhanced Data Visualization**
 - **TradingView Integration:** Professional-grade interactive charts
@@ -73,11 +73,8 @@ MYStocks is a Malaysia-focused stock analysis platform that provides real-time m
 - **Visualization:** 
   - TradingView Widgets (Professional charts)
   - Chart.js (Prediction analytics)
-- **APIs:** Multiple stock data providers support
-  - Alpha Vantage (Recommended)
-  - Twelve Data
-  - IEX Cloud
-  - Finnhub.io
+- **APIs:**
+  - Twelve Data (default)
 - **Responsive Design:** 
   - CSS Grid and Flexbox
   - Mobile-first methodology
@@ -101,7 +98,7 @@ cd Stock-Analysis-Web
 
 2. **Configure API Key:**
    - Get your free API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key) or [Twelve Data](https://twelvedata.com/)
-   - Open `js/stock.js` and replace `'your_api_keys'` with your actual API key
+  - Open `js/stock_details.js` and replace `'your_api_keys'` with your actual API key
 
 3. **Open the application:**
    - **Simple method:** Double-click `index.html` to open in your browser
@@ -118,12 +115,13 @@ cd Stock-Analysis-Web
 2. **Browse Stocks:** Navigate to the Stocks page to view available securities
 3. **View Charts:** Click on any stock to view detailed TradingView charts
 4. **Stock Prediction:** 
-   - Access the prediction feature from any stock chart
-   - Input historical prices (oldest to newest)
-   - Choose prediction method (Advanced/Conservative/Aggressive)
-   - Get confidence-rated predictions with professional analysis
+  - Access the prediction feature from any stock chart
+  - Input historical prices (oldest to newest), either as a list or raw numbers (one per line)
+  - Choose prediction method (Advanced/Conservative/Aggressive)
+  - Get confidence-rated predictions with professional analysis
 5. **Add to Watchlist:** Save your favorite stocks for quick access
 6. **Portfolio Management:** Track your investments and performance
+7. **Remove Button UI:** Easily remove stocks from your watchlist using a bin icon button with hover effect for better interactivity
 
 ## 🎯 Benefits
 
@@ -143,10 +141,10 @@ cd Stock-Analysis-Web
 - **Advanced Analytics:** Moving averages, trend analysis, volatility assessment
 - **Multiple Prediction Models:** Choose from conservative to aggressive forecasting
 - **Confidence Metrics:** Data-driven accuracy ratings for all predictions
-- **Professional UI:** Clean, emoji-free interface suitable for business use
+- **Professional UI:** Clean, business-appropriate interface suitable for personal or educational use
 - **Educational Value:** Learn market analysis through hands-on experience
 
-## � Recent Improvements
+## Recent Improvements
 
 ### **Enhanced Prediction Algorithm (v2.0)**
 - Upgraded from basic linear regression to advanced moving average + trend analysis
@@ -171,7 +169,7 @@ cd Stock-Analysis-Web
 - Easy API switching for better reliability
 - Comprehensive setup documentation for different providers
 
-# ��🗂️ Project Structure
+# 🗂️ Project Structure
 
 ```
 Stock-Analysis-Web/
@@ -188,14 +186,15 @@ Stock-Analysis-Web/
 │   └── topbar.css          # Navigation with mobile optimization
 ├── js/
 │   ├── main.js             # Core functionality and authentication
-│   ├── stock.js            # Stock data API integration
+│   ├── stock_details.js    # Main stock data API integration (Twelve Data)
 │   ├── portfolio.js        # Portfolio management features
 │   ├── stock-predictor.js  # Advanced prediction algorithms
 │   └── watchlist.js        # Watchlist functionality
 ├── image/                  # Optimized static assets
 │   ├── user_authentication.jpg
 │   ├── portfolio_management.png
-│   └── market_analysis.jpg
+│   ├── market_analysis.jpg
+│   └── remove.jpg          # Bin icon for remove button
 └── README.md              # Comprehensive documentation
 ```
 

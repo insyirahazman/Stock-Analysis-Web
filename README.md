@@ -47,19 +47,13 @@ MYStocks is a web-based stock analysis platform that provides real-time market d
 - Easy watchlist management
 
 ### 🤖 **Advanced Stock Prediction**
-- **Multiple Prediction Algorithms:**
-  - Advanced (Moving Average + Trend Analysis)
-  - Conservative (Weighted Average)
-  - Aggressive (Momentum-Based)
-- **Technical Analysis Integration:**
-  - Simple Moving Average (SMA)
-  - Exponential Moving Average (EMA)
-  - Trend strength calculation
-  - Volatility assessment
-  - Momentum indicators
-- **Confidence Scoring:** 30-85% accuracy ratings based on data quality
-- **Professional Analysis:** Bullish/Bearish/Sideways market detection
-- **Visual Predictions:** Advanced charts with prediction markers
+
+**LSTM Neural Network Prediction:**
+  - Uses Long Short-Term Memory (LSTM) models for advanced time series forecasting
+  - Captures complex patterns and trends in historical price data
+  - Provides more accurate and robust predictions compared to traditional methods
+  - Visualizes predicted price trends on interactive charts
+  - Confidence scoring and market sentiment analysis
 
 ### 📱 **Cross-Platform Compatibility**
 - **Responsive Design:** Optimized for desktop, tablet, and mobile devices
@@ -97,7 +91,7 @@ cd Stock-Analysis-Web
 ```
 
 2. **Configure API Key:**
-   - Get your free API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key) or [Twelve Data](https://twelvedata.com/)
+   - Get your free API key from [Twelve Data](https://twelvedata.com/)
   - Open `js/stock_details.js` and replace `'your_api_keys'` with your actual API key
 
 3. **Open the application:**
@@ -108,20 +102,6 @@ cd Stock-Analysis-Web
    python -m http.server 8000
    # Then visit http://localhost:8000
    ```
-
-## 📱 Usage
-
-1. **Register/Login:** Create an account or log in to access personalized features
-2. **Browse Stocks:** Navigate to the Stocks page to view available securities
-3. **View Charts:** Click on any stock to view detailed TradingView charts
-4. **Stock Prediction:** 
-  - Access the prediction feature from any stock chart
-  - Input historical prices (oldest to newest), either as a list or raw numbers (one per line)
-  - Choose prediction method (Advanced/Conservative/Aggressive)
-  - Get confidence-rated predictions with professional analysis
-5. **Add to Watchlist:** Save your favorite stocks for quick access
-6. **Portfolio Management:** Track your investments and performance
-7. **Remove Button UI:** Easily remove stocks from your watchlist using a bin icon button with hover effect for better interactivity
 
 ## 🎯 Benefits
 
@@ -143,31 +123,6 @@ cd Stock-Analysis-Web
 - **Confidence Metrics:** Data-driven accuracy ratings for all predictions
 - **Professional UI:** Clean, business-appropriate interface suitable for personal or educational use
 - **Educational Value:** Learn market analysis through hands-on experience
-
-## Recent Improvements
-
-### **Enhanced Prediction Algorithm (v2.0)**
-- Upgraded from basic linear regression to advanced moving average + trend analysis
-- **60-75% accuracy** (improved from 40-50%)
-- Three prediction methods to suit different risk profiles
-- Real-time confidence scoring and market analysis
-
-### **Mobile-First Responsive Design**
-- Complete mobile optimization with proper viewport handling
-- Touch-friendly navigation and chart interactions
-- Responsive TradingView charts that adapt to screen size
-- Cross-platform compatibility tested on all devices
-
-### **Professional UI Refinements**
-- Clean, business-appropriate interface without emojis
-- Improved typography and spacing for better readability
-- Enhanced topbar navigation with consistent sizing
-- Professional color scheme and layout structure
-
-### **API Flexibility**
-- Support for multiple stock data providers
-- Easy API switching for better reliability
-- Comprehensive setup documentation for different providers
 
 # 🗂️ Project Structure
 

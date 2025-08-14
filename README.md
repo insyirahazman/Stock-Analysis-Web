@@ -6,7 +6,7 @@ A comprehensive web-based stock analysis platform designed for traders, investor
 
 ## 🌟 Overview
 
-MYStocks is a web-based stock analysis platform that provides real-time market data, interactive visualizations, and predictive insights for popular US stocks (e.g., AAPL, TSLA, NVDA). Built with modern web technologies, it offers a user-friendly interface suitable for both beginners and professional traders.
+MYStocks is a web-based stock analysis platform based in Malaysia that provides real-time market data, interactive visualizations, and predictive insights for popular US stocks (e.g., AAPL, TSLA, NVDA). Built with modern web technologies, it offers a user-friendly interface suitable for both beginners and professional traders.
 
 **🔗 Live Website:** [https://insyirahazman.github.io/Stock-Analysis-Web/](https://insyirahazman.github.io/Stock-Analysis-Web/)
 

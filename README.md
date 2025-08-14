@@ -10,6 +10,9 @@ MYStocks is a web-based stock analysis platform that provides real-time market d
 
 **🔗 Live Website:** [https://insyirahazman.github.io/Stock-Analysis-Web/](https://insyirahazman.github.io/Stock-Analysis-Web/)
 
+https://github.com/user-attachments/assets/299f7e45-5b9a-443b-9ef8-42770ac36dd3
+
+
 ## ✨ Key Features
 
 ### 🔐 **User Authentication**
